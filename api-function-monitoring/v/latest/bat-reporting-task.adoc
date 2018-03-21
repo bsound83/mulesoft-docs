@@ -153,7 +153,7 @@ image::sumo-results.png[]
 
 == Custom Post Report
 
-Bat publish the result.json with a post to the url specified in the bat.yaml, you can add headers if it is necessary.
+Bat publishes the result.json with a post to the url specified in the bat.yaml. You can add headers if necessary.
 
 ----
 reporters:
@@ -190,7 +190,7 @@ reporters:
 
 === Create Local Custom Report
 
-You can generate a custom report based on a DataWeave transformation that is specified in the bat.yaml using `file` keyword.
+You can generate a custom report based on a DataWeave transformation that is specified in the bat.yaml using the `file` keyword.
 
 ----
 reporters:
