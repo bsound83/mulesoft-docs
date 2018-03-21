@@ -28,7 +28,7 @@ _where_
 ** extensions: .yaml, or .yml
 +
 When you execute bat without any arguments, it reads the YAML in the current directory and runs specified tests.
-You can create a config folder and create differents configuration files for the environments.
+You can create a config folder and create different configuration files for the environments.
 ```
 test-project
 ├── bat.yaml
@@ -52,7 +52,7 @@ Selects a configuration file (from config folder) and registers the result as a 
 +
 Prints to standard output the version numbers of installed BAT and wrapper. If the latest version is not installed, that version is downloaded.
 +
-** `--bat-version=0.3.256`
+** `--bat-version=1.0.39`
 +
 Executes BAT using the specified version.
 +
@@ -119,8 +119,6 @@ config/default.dwl
 config/prod.dwl
 config/dev.dwl
 ```
-
-
 
 == BAT Command Examples
 

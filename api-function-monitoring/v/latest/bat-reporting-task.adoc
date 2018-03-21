@@ -198,3 +198,21 @@ reporters:
     file: reporter/transform.dwl
     outFile: local.json
 ----
+
+The transform.dwl contains the following code:
+
+----
+%dw 2.0
+output application/json
+var result = if (payload.result.pass[0]) " it's ok" else " fail"
+---
+{
+    result: "The suite <" ++ payload.name ++ "> with assertion <" ++ payload.result[0].name ++ ">" ++ result
+}
+----
+
+And the result is:
+
+`{
+  "result": "The suite <Hello world suite> with assertion <answer 200> it's ok"
+}`
