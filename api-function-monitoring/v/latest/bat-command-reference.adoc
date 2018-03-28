@@ -80,17 +80,51 @@ Return the token for accessing Anypoint Platform in the credentials file. Requir
 +
 Generate a post with the machine name and create a dummy target.
 +
+** `target ls | list`
++
+List all the targets information from the profile's organization.
++
 ** `schedule create [--cron="<expression>"]`
 +
 Create a scheduler using a cron expression and generating a zip that includes the tests and all the files. By default, if a cron expression is not entered, tests are scheduled to run every 5 minutes.
 +
-** `schedule endpoint <arbitrary-URL> [--profile=<value>] [--init-folder]`
+** `schedule endpoint <arbitrary-URL> [--cron="<cron>"] [--name=<suiteName>] [--target=<targetId>] [--new-relic-license-key=<newRelicLicenseKey>] [--slack-webhook=<slackWebHook>] [--sumo-endpoint=<sumoEndpoint>] [--pager-duty-routing-key=<pagerDutyRoutingKey>] [--custom-report-url=<customReportUrl>] [--custom-report-headers=<header1,header2,...,headerN>] [--custom-report-trasnformation=<pathToDwlFile>][--init-folder]`
 +
-Create a monitor in Exchange of using an arbitrary URL, for example `+http://example.com+`. Optionally, store generated exchange.json and main.dml in the currrent directory. By default, tests are scheduled to run every 5 minutes.
+Create a monitor in Exchange of using an arbitrary URL, for example `+http://example.com+`. Optionally, you can add commands to generate the bat.yaml with different parameters.
 +
-** `schedule list [--profile=<value>]`
+*** `[--cron="<cron>"]` By default, tests are scheduled to run every 5 minutes. You can change with the cron expression
 +
-List all the schedulers in a particular enviroment.
++
+*** `[--name="<suiteName>"]` To set the name of the suite
++
++
+*** `[--target="<targetId>"]` Set a specific target to the monitor
++
++
+*** `[--new-relic-license-key="<newRelicLicenseKey>"]` Add the new relic report to the bat.yaml.
++
++
+*** `[--slack-webhook="<slackWebHook>"]` Add the slack report to the bat.yaml.
++
++
+*** `[--sumo-endpoint="<sumoEndpoint>"]` Add the sumo report to the bat.yaml.
++
++
+*** `[--pager-duty-routing-key="<pagerDutyRoutingKey>"]` Add the pager duty report to the bat.yaml.
++
++
+*** `[--custom-report-url="<customReportUrl>"] [--custom-report-headers="<header1,header2,...,headerN>"] | [--custom-report-trasnformation="<pathToDwlFile>"]` Add the custom report to the bat.yaml and optionally you can add the transformation file.
++
++
+*** `[--init-folder]` Store generated exchange.json, bat.yaml and main.dml in the current directory.
++
+** `schedule ls | list`
++
+List all the schedulers information from the profile's organization.
++
+** `schedule rm | remove <scheduleId>`
++
+This command will delete a schedule by its id.
 +
 ** `--username=<value>`
 +
@@ -136,9 +170,11 @@ config/dev.dwl
 Example output if you do not have the latest version is:
 +
 ----
-Downloading version 0.3.338. Please wait.......................
+Updating Version: You have an older BAT version.
+The new version will be downloaded in /Users/<username>/.bat/bat-cli-1.0.47
+Downloading version 1.0.47. Please wait.......................
 BAT Wrapper: 1.0.53
-BAT Version: 0.3.338
+BAT Version: 1.0.47
 ----
 
 == See Also
