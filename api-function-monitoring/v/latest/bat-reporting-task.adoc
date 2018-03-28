@@ -35,7 +35,7 @@ reporters:
       NEW_RELIC_LICENSE_KEY: "xxxxxxxxxxxxxxx"
 ----
 +
-Schedule a test and create a monitor.
+. Schedule a test and create a monitor.
 +
 . Go to New Relic, and click Plugins.
 +
